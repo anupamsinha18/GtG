@@ -874,7 +874,6 @@ a.shop-arrow {
 
 .footer {
     background-color: #012610;
-    /* Dark Green */
     color: #fff;
     padding: 80px 0;
     font-family: 'Inter', sans-serif;
@@ -1146,4 +1145,93 @@ a.shop-arrow {
     .badge {
         font-size: 14px;
     }
+}
+
+/* =========================================
+   ANIMATIONS & MICRO-INTERACTIONS
+   ========================================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Base class for scroll animation */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+/* State when visible */
+.animate-on-scroll.animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays (optional) */
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+/* Setup elements for animation */
+/* Elements have .animate-on-scroll class added in HTML */
+
+/* Hover Effects */
+.hero-btn,
+.shop-btn,
+.newsletter-btn,
+.add-cart-btn {
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover,
+.shop-btn:hover,
+.newsletter-btn:hover,
+.add-cart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.c-accordion-item {
+    transition: all 0.3s ease;
+}
+
+.c-accordion-item:hover {
+    transform: translateX(5px);
+    border-color: #026630;
+}
+
+.gallery-thumbnails .thumb {
+    transition: transform 0.2s;
+}
+
+.gallery-thumbnails .thumb:hover {
+    transform: scale(1.05);
 }
