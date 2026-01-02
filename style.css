@@ -9,7 +9,7 @@ body {
 }
 
 .navbar-hero {
-    background-image: url("assets/Banner.webp");
+    background-image: url("Assets/Banner.webp");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
